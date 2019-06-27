@@ -285,28 +285,6 @@ if __name__ == '__main__':
     location = LocationRecognization()
     res = location.search_location(title=title, passage=passage)
     print(json.dumps(res, ensure_ascii=False))
-    pdb.set_trace()
 
-    for root, dirs, filenames in os.walk('/data3/ml/cuichengyu/credit-detect/yuqing_data_dir'):
-        for filename in filenames:
-            filepath = os.path.join(root, filename)
-            print(filepath)
-            with open(filepath, 'r', encoding='utf-8') as f:
-                for idx, i in enumerate(f.readlines()):
-                    js_dict = json.loads(i)
-                    title = js_dict['news_title']
-                    if len(title) > 0 and title[-1] not in ['。', '！', '？', '.', '!', '?']:
-                        title = title + '。'
-                    content = ''.join(json.loads(js_dict['main']))
-                    print('-'*50)
-                    print(title)
-                    print(content[:1000])
-                    res = location.search_location(title, content)
-                    print('')
-                    print(res[0])
-                    print(json.dumps(res[1], ensure_ascii=False))
-                    pdb.set_trace()
-                    if idx > 20:
-                        break
                         
                         
