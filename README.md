@@ -9,7 +9,8 @@
 - 使用 python3
 ```
 $ git clone https://github.com/dongrixinyu/location_detect.git
-$ pip install location_detect/
+$ cd location_detect
+$ pip install .
 ``` 
 # 使用方法
 ### 样例1
@@ -34,7 +35,7 @@ print(loc_reg.predict(passage))
 
 结果为：
 ```json
-{'国外': [{'国': '比利时'}]}
+{'国外': [{'比利时']}
 ```
 
 # 说明
